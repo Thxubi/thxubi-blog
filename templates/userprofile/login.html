@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% load staticfiles %}
+{% block title %} 登录 {% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row">
+            <div class="col-12">
+                    <br>
+                    <h5>我想<a href='{% url "userprofile:register" %}'>注册</a>一个账号！</h5>
+                    <h5>我就<a href='{% url "article:article_list" %}'>看看</a>不说话</h5>
+                    <br>
+                    <form method="post" action=".">
+                    </form>
+                    
+                </div>
+                
+        <div class="col-12">
+            <br>
+            <form method="post" action=".">
+                {% csrf_token %}
+                <!-- 账号 -->
+                <div class="form-group">
+                    <label for="username">账号</label>
+                    <input style="width: auto;" type="text" class="form-control" id="username" name="username">
+                </div>
+                <!-- 密码 -->
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input style="width: auto;" type="password" class="form-control" id="password" name="password">
+                </div>
+                <!-- 提交按钮 -->
+                <button type="submit" class="btn btn-primary">提交</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

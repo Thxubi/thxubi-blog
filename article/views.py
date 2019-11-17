@@ -63,12 +63,6 @@ def article_safe_delete(request, id):
         return HttpResponse("unsafedelete")
 
 def article_update(request, id):
-    """
-    更新文章的视图函数
-    通过POST方法提交表单，更新titile、body字段
-    GET方法进入初始表单页面
-    id： 文章的 id
-    """
 
     # 获取需要修改的具体文章对象
     article = ArticlePost.objects.get(id=id)
