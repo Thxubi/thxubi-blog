@@ -21,6 +21,7 @@ def article_detail(request, id):
         extensions=[
         'markdown.extensions.extra',
         'markdown.extensions.codehilite',
+        'markdown.extensions.toc',
         ])
     context = {'article': article}
     return render(request, 'article/detail.html', context)
